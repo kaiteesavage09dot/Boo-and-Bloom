@@ -1,984 +1,297 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Boo & Bloom | Babysitting</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<title>Boo & Bloom | Babysitting in Roxby Downs</title>
 
 <style>
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-
-html {
-scroll-behavior: smooth;
-}
-
-body {
-background: #fffaf7;
-color: #40383e;
-font-family: "DM Sans", sans-serif;
-line-height: 1.6;
-}
-
-/* NAVIGATION */
-
-header {
-height: 82px;
-padding: 0 7%;
-display: flex;
-align-items: center;
-justify-content: space-between;
-position: sticky;
-top: 0;
-z-index: 100;
-background: rgba(255,250,247,0.95);
-backdrop-filter: blur(10px);
-border-bottom: 1px solid #eee0dc;
-}
-
-.logo {
-display: flex;
-align-items: center;
-gap: 10px;
-text-decoration: none;
-color: #40383e;
-}
-
-.logo-icon {
-font-size: 28px;
-}
-
-.logo-name {
-display: block;
-font-family: "Playfair Display", serif;
-font-size: 21px;
-line-height: 1;
-}
-
-.logo-subtitle {
-display: block;
-font-size: 9px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: #9b7883;
-margin-top: 5px;
-}
-
-nav {
-display: flex;
-align-items: center;
-gap: 28px;
-}
-
-nav a {
-color: #665960;
-text-decoration: none;
-font-size: 14px;
-}
-
-nav a:hover {
-color: #9b7080;
-}
-
-.nav-button {
-background: #8f6975;
-color: white !important;
-padding: 10px 19px;
-border-radius: 30px;
-}
-
-.menu-button {
-display: none;
-border: none;
-background: transparent;
-font-size: 25px;
-cursor: pointer;
-}
-
-/* HERO */
-
-.hero {
-min-height: calc(100vh - 82px);
-padding: 70px 10%;
-display: grid;
-grid-template-columns: 1.1fr 0.9fr;
-gap: 7%;
-align-items: center;
-
-background:
-radial-gradient(
-circle at 80% 25%,
-#f4dfe2,
-transparent 38%
-);
-}
-
-.eyebrow {
-font-size: 11px;
-letter-spacing: 2.5px;
-font-weight: 600;
-color: #a17885;
-margin-bottom: 15px;
-}
-
-.hero h1 {
-font-family: "Playfair Display", serif;
-font-size: clamp(55px, 7vw, 90px);
-line-height: 0.98;
-font-weight: 500;
-margin-bottom: 25px;
-}
-
-.hero h1 span {
-color: #9b7080;
-font-style: italic;
-}
-
-.hero-description {
-font-size: 18px;
-color: #685d63;
-max-width: 600px;
-}
-
-.buttons {
-display: flex;
-gap: 12px;
-flex-wrap: wrap;
-margin: 30px 0 15px;
-}
-
-.button {
-display: inline-block;
-padding: 13px 23px;
-border-radius: 30px;
-text-decoration: none;
-font-weight: 600;
-font-size: 14px;
-cursor: pointer;
-border: none;
-}
-
-.button-primary {
-background: #8f6975;
-color: white;
-}
-
-.button-secondary {
-background: white;
-color: #725d65;
-border: 1px solid #cfbdc1;
-}
-
-.opening {
-color: #8d747d;
-font-size: 13px;
-}
-
-/* HERO CARD */
-
-.hero-card {
-width: min(390px, 100%);
-aspect-ratio: 1;
-border-radius: 48%;
-background: #efd8dc;
-
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-
-text-align: center;
-padding: 50px;
-
-box-shadow: 0 25px 70px rgba(156,119,128,0.15);
-}
-
-.butterfly {
-font-size: 75px;
-margin-bottom: 10px;
-}
-
-.hero-card h2 {
-font-family: "Playfair Display", serif;
-font-size: 36px;
-font-weight: 500;
-}
-
-.hero-card p {
-max-width: 260px;
-color: #725f66;
-margin: 10px 0;
-}
-
-/* ABOUT */
-
-.about {
-padding: 110px 12%;
-text-align: center;
-background: white;
-}
-
-.section-title {
-font-family: "Playfair Display", serif;
-font-size: clamp(34px, 4vw, 52px);
-font-weight: 500;
-margin-bottom: 18px;
-}
-
-.about p {
-max-width: 700px;
-margin: 12px auto;
-color: #6e6268;
-}
-
-/* SERVICES */
-
-.services {
-padding: 105px 9%;
-}
-
-.section-heading {
-text-align: center;
-margin-bottom: 45px;
-}
-
-.cards {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
-}
-
-.card {
-background: white;
-border: 1px solid #eee1dc;
-border-radius: 24px;
-padding: 35px;
-min-height: 240px;
-}
-
-.card-icon {
-font-size: 29px;
-color: #a27583;
-}
-
-.card h3 {
-font-family: "Playfair Display", serif;
-font-size: 25px;
-font-weight: 500;
-margin: 18px 0 8px;
-}
-
-.card p {
-color: #70646a;
-font-size: 14px;
-}
-
-/* WHY US */
-
-.why-us {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 8%;
-padding: 100px 12%;
-background: #f3e3e3;
-}
-
-.why-us-description {
-color: #6c6066;
-}
-
-.values {
-display: grid;
-gap: 17px;
-}
-
-.value {
-display: flex;
-gap: 18px;
-background: #fffaf7;
-border-radius: 18px;
-padding: 20px;
-}
-
-.value-number {
-color: #a17885;
-font-weight: 600;
-}
-
-.value p {
-margin: 0;
-font-size: 13px;
-color: #6d6268;
-}
-
-.value strong {
-color: #40383e;
-font-size: 15px;
-}
-
-/* FAQ */
-
-.faq {
-padding: 100px 15%;
-background: white;
-}
-
-.faq-item {
-border-top: 1px solid #eadeda;
-padding: 20px 0;
-}
-
-.faq-item:last-child {
-border-bottom: 1px solid #eadeda;
-}
-
-.faq-question {
-cursor: pointer;
-font-weight: 600;
-list-style: none;
-}
-
-.faq-answer {
-color: #6d6268;
-font-size: 14px;
-margin-top: 12px;
-}
-
-/* CONTACT */
-
-.contact {
-display: grid;
-grid-template-columns: 0.8fr 1.2fr;
-gap: 10%;
-padding: 100px 12%;
-background: #f8ebe8;
-}
-
-.contact-description {
-color: #6c6066;
-}
-
-.contact-note {
-font-size: 12px;
-color: #816d74;
-margin-top: 25px;
-}
-
-form {
-background: white;
-padding: 32px;
-border-radius: 25px;
-box-shadow: 0 15px 40px rgba(142,105,112,0.1);
-}
-
-label {
-display: block;
-font-size: 13px;
-font-weight: 600;
-margin-bottom: 17px;
-}
-
-input,
-textarea {
-display: block;
-width: 100%;
-margin-top: 7px;
-border: 1px solid #dfd1d0;
-border-radius: 12px;
-padding: 13px;
-font-family: "DM Sans", sans-serif;
-font-size: 14px;
-background: #fffdfc;
-}
-
-textarea {
-min-height: 120px;
-resize: vertical;
-}
-
-#form-message {
-color: #8f6975;
-font-size: 13px;
-margin-top: 12px;
-}
-
-/* FOOTER */
-
-footer {
-padding: 35px 8%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 20px;
-background: #40383e;
-color: #eee0e1;
-}
-
-footer .logo {
-color: white;
-}
-
-footer p {
-font-size: 12px;
-color: #cbbdc0;
-}
-
-footer a {
-color: #eadde0;
-text-decoration: none;
-font-size: 13px;
-}
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-header {
-padding: 0 6%;
-}
-
-.menu-button {
-display: block;
-}
-
-nav {
-display: none;
-position: absolute;
-top: 82px;
-left: 0;
-right: 0;
-background: #fffaf7;
-padding: 20px 7%;
-flex-direction: column;
-align-items: flex-start;
-border-bottom: 1px solid #eee0dc;
-}
-
-nav.show {
-display: flex;
-}
-
-.hero {
-grid-template-columns: 1fr;
-text-align: center;
-padding: 65px 7%;
-}
-
-.hero-description {
-margin: auto;
-}
-
-.buttons {
-justify-content: center;
-}
-
-.hero-card {
-width: 280px;
-margin: auto;
-}
-
-.cards,
-.why-us,
-.contact {
-grid-template-columns: 1fr;
-}
-
-.faq {
-padding: 80px 8%;
-}
-
-footer {
-flex-direction: column;
-text-align: center;
-}
-}
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #fff5f7;
+        color: #5a3d45;
+        line-height: 1.6;
+    }
+
+    header {
+        background: #f7c6d4;
+        text-align: center;
+        padding: 45px 20px;
+    }
+
+    header h1 {
+        font-size: 42px;
+        color: #9b526b;
+        margin-bottom: 8px;
+    }
+
+    header p {
+        font-size: 18px;
+        color: #704852;
+    }
+
+    nav {
+        background: #fff;
+        text-align: center;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    nav a {
+        color: #9b526b;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: bold;
+    }
+
+    section {
+        max-width: 900px;
+        margin: auto;
+        padding: 55px 20px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #9b526b;
+        margin-bottom: 25px;
+        font-size: 30px;
+    }
+
+    .intro {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(155,82,107,0.12);
+    }
+
+    .card h3 {
+        color: #9b526b;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 27px;
+        font-weight: bold;
+        color: #b65f7b;
+    }
+
+    .trust {
+        background: #fce1e8;
+        border-radius: 20px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .faq {
+        background: white;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        box-shadow: 0 3px 10px rgba(155,82,107,0.08);
+    }
+
+    .faq h3 {
+        color: #9b526b;
+        margin-bottom: 8px;
+    }
+
+    .contact {
+        background: #f7c6d4;
+        border-radius: 22px;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 13px 28px;
+        background: #9b526b;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+    }
+
+    .button:hover {
+        background: #7f4056;
+    }
+
+    footer {
+        background: #9b526b;
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+        margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 34px;
+        }
+
+        nav a {
+            margin: 0 6px;
+            font-size: 14px;
+        }
+    }
 </style>
 </head>
 
 <body>
 
 <header>
-
-<a href="#home" class="logo">
-<span class="logo-icon">🦋</span>
-
-<div>
-<span class="logo-name">Boo & Bloom</span>
-<span class="logo-subtitle">Babysitting</span>
-</div>
-</a>
-
-<button class="menu-button"
-onclick="document.querySelector('nav').classList.toggle('show')">
-☰
-</button>
-
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#why">Why Us</a>
-<a href="#faq">FAQs</a>
-<a href="#contact" class="nav-button">Enquire</a>
-</nav>
-
+    <h1>🦋 Boo & Bloom 🌸</h1>
+    <p>Caring, reliable babysitting in Roxby Downs, SA</p>
 </header>
 
+<nav>
+    <a href="#about">About</a>
+    <a href="#prices">Prices</a>
+    <a href="#safety">Safety</a>
+    <a href="#faq">FAQs</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-<!-- HERO -->
+<section id="about">
+    <h2>Welcome to Boo & Bloom 🌸</h2>
 
-<section class="hero" id="home">
+    <p class="intro">
+        Boo & Bloom provides caring and reliable babysitting services
+        for families in Roxby Downs, South Australia.
+        My goal is to create a safe, comfortable and enjoyable environment
+        where children can feel happy and cared for while parents have peace of mind.
+    </p>
+</section>
 
-<div>
+<section id="prices">
+    <h2>Our Prices 💗</h2>
 
-<p class="eyebrow">
-CARING • RELIABLE • FAMILY-FOCUSED
-</p>
+    <div class="cards">
 
-<h1>
-Little moments.<br>
-<span>Big care.</span>
-</h1>
+        <div class="card">
+            <h3>Weekdays</h3>
+            <p class="price">$20/hour</p>
+        </div>
 
-<p class="hero-description">
-Professional babysitting with a gentle, personal touch —
-giving parents peace of mind while little ones feel safe,
-happy and cared for.
-</p>
+        <div class="card">
+            <h3>Weekends</h3>
+            <p class="price">$22/hour</p>
+        </div>
 
-<div class="buttons">
+        <div class="card">
+            <h3>Additional Children</h3>
+            <p class="price">+$3/hour</p>
+            <p>Per additional child</p>
+        </div>
 
-<a href="#contact"
-class="button button-primary">
-Make an enquiry
-</a>
+        <div class="card">
+            <h3>Evenings 🌙</h3>
+            <p>Weekday or weekend rate applies depending on the evening.</p>
+        </div>
 
-<a href="#about"
-class="button button-secondary">
-Discover Boo & Bloom
-</a>
+    </div>
+</section>
 
-</div>
+<section id="safety">
+    <h2>Safety & Trust 🛡️</h2>
 
-<p class="opening">
-✨ Bookings opening soon in South Australia
-</p>
+    <div class="trust">
+        <h3>Working With Children Check</h3>
+        <p>
+            Boo & Bloom holds a valid Working With Children Check (WWCC),
+            helping provide families with confidence when choosing childcare.
+        </p>
+    </div>
+</section>
 
-</div>
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
 
+    <div class="faq">
+        <h3>What ages of children do you babysit?</h3>
+        <p>
+            I provide babysitting for children of different ages.
+            During the booking process, I'll ask about your child's or
+            children's ages, needs and routines so I can provide appropriate care.
+        </p>
+    </div>
 
-<div class="hero-card">
+    <div class="faq">
+        <h3>Where do you provide babysitting?</h3>
+        <p>
+            Boo & Bloom currently operates in Roxby Downs, South Australia.
+        </p>
+    </div>
 
-<div class="butterfly">
-🦋
-</div>
+    <div class="faq">
+        <h3>How do I make a booking?</h3>
+        <p>
+            Send an enquiry through the contact section below with your
+            preferred date, time and number of children.
+        </p>
+    </div>
 
-<h2>
-Boo & Bloom
-</h2>
-
-<p>
-Where little ones feel safe, supported
-and free to bloom.
-</p>
-
-<div>
-✦   ✿   ✦
-</div>
-
-</div>
+    <div class="faq">
+        <h3>Do you babysit in the evenings?</h3>
+        <p>
+            Yes! Evening bookings are available, with the applicable
+            weekday or weekend rate.
+        </p>
+    </div>
 
 </section>
 
+<section id="contact">
+    <div class="contact">
+        <h2>Get in Touch 💌</h2>
 
-<!-- ABOUT -->
+        <p>
+            Interested in booking Boo & Bloom?
+            I'd love to hear from you!
+        </p>
 
-<section class="about" id="about">
+        <p style="margin-top: 15px;">
+            📍 Roxby Downs, South Australia
+        </p>
 
-<p class="eyebrow">
-WELCOME TO BOO & BLOOM
-</p>
+        <a class="button"
+           href="mailto:BooAndBloom09@gmail.com?subject=Boo%20%26%20Bloom%20Booking%20Enquiry">
+           Contact Boo & Bloom
+        </a>
 
-<h2 class="section-title">
-A little care goes a long way.
-</h2>
-
-<p>
-Boo & Bloom is a babysitting service created with
-one simple goal: to make childcare feel warm,
-comfortable and reassuring for both children and parents.
-</p>
-
-<p>
-Every family is different, so care is approached
-with patience, respect and attention to each
-child's individual needs and routine.
-</p>
-
+        <p style="margin-top: 18px;">
+            <strong>Email:</strong> BooAndBloom09@gmail.com
+        </p>
+    </div>
 </section>
-
-
-<!-- SERVICES -->
-
-<section class="services" id="services">
-
-<div class="section-heading">
-
-<p class="eyebrow">
-WHAT WE OFFER
-</p>
-
-<h2 class="section-title">
-Care that fits your family.
-</h2>
-
-</div>
-
-
-<div class="cards">
-
-<article class="card">
-
-<div class="card-icon">
-♡
-</div>
-
-<h3>
-Babysitting
-</h3>
-
-<p>
-Friendly, attentive care while you're at work,
-out for the evening or simply need an extra
-pair of hands.
-</p>
-
-</article>
-
-
-<article class="card">
-
-<div class="card-icon">
-✿
-</div>
-
-<h3>
-Routine & Play
-</h3>
-
-<p>
-Age-appropriate activities, play and support
-with everyday routines in a calm and positive
-environment.
-</p>
-
-</article>
-
-
-<article class="card">
-
-<div class="card-icon">
-☾
-</div>
-
-<h3>
-Evening Care
-</h3>
-
-<p>
-Helping little ones wind down with dinner,
-quiet activities and bedtime routines where
-requested.
-</p>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- WHY BOO & BLOOM -->
-
-<section class="why-us" id="why">
-
-<div>
-
-<p class="eyebrow">
-WHY BOO & BLOOM
-</p>
-
-<h2 class="section-title">
-More than just babysitting.
-</h2>
-
-<p class="why-us-description">
-We believe great childcare is built on trust.
-Boo & Bloom aims to create a caring experience
-where parents feel comfortable and children feel valued.
-</p>
-
-</div>
-
-
-<div class="values">
-
-<div class="value">
-
-<span class="value-number">
-01
-</span>
-
-<p>
-<strong>Safety first</strong><br>
-Children's wellbeing is always the priority.
-</p>
-
-</div>
-
-
-<div class="value">
-
-<span class="value-number">
-02
-</span>
-
-<p>
-<strong>Personal care</strong><br>
-Care is tailored around your family's needs
-and routines.
-</p>
-
-</div>
-
-
-<div class="value">
-
-<span class="value-number">
-03
-</span>
-
-<p>
-<strong>Peace of mind</strong><br>
-Clear communication helps parents feel
-confident and informed.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FAQ -->
-
-<section class="faq" id="faq">
-
-<p class="eyebrow">
-QUESTIONS
-</p>
-
-<h2 class="section-title">
-Frequently asked questions
-</h2>
-
-
-<details class="faq-item">
-
-<summary class="faq-question">
-When will bookings open?
-</summary>
-
-<p class="faq-answer">
-Bookings will open soon. Follow Boo & Bloom
-on social media for updates and availability.
-</p>
-
-</details>
-
-
-<details class="faq-item">
-
-<summary class="faq-question">
-Where is Boo & Bloom available?
-</summary>
-
-<p class="faq-answer">
-Boo & Bloom is based in South Australia.
-Availability and travel areas will be confirmed
-when bookings open.
-</p>
-
-</details>
-
-
-<details class="faq-item">
-
-<summary class="faq-question">
-How do I make an enquiry?
-</summary>
-
-<p class="faq-answer">
-Use the enquiry section below. Once bookings
-are open, you can provide your preferred date,
-times and care requirements.
-</p>
-
-</details>
-
-
-<details class="faq-item">
-
-<summary class="faq-question">
-Can you follow my child's usual routine?
-</summary>
-
-<p class="faq-answer">
-Yes. Family routines and preferences can be
-discussed before care so expectations are clear.
-</p>
-
-</details>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-<div>
-
-<p class="eyebrow">
-LET'S CHAT
-</p>
-
-<h2 class="section-title">
-Ready to bloom?
-</h2>
-
-<p class="contact-description">
-Bookings are opening soon. Leave an enquiry
-and Boo & Bloom will be in touch.
-</p>
-
-<p class="contact-note">
-🌷 Please don't include sensitive personal
-information in this form.
-</p>
-
-</div>
-
-
-<form id="enquiry-form">
-
-<label>
-Name
-
-<input
-type="text"
-placeholder="Your name"
-required>
-</label>
-
-
-<label>
-Email
-
-<input
-type="email"
-placeholder="you@example.com"
-required>
-</label>
-
-
-<label>
-Message
-
-<textarea
-placeholder="Tell us a little about what you're looking for..."
-required></textarea>
-</label>
-
-
-<button
-class="button button-primary"
-type="submit">
-Send enquiry
-</button>
-
-<p id="form-message"></p>
-
-</form>
-
-</section>
-
-
-<!-- FOOTER -->
 
 <footer>
-
-<a href="#home" class="logo">
-
-<span class="logo-icon">
-🦋
-</span>
-
-<div>
-<span class="logo-name">
-Boo & Bloom
-</span>
-
-<span class="logo-subtitle">
-Babysitting
-</span>
-</div>
-
-</a>
-
-
-<p>
-© 2026 Boo & Bloom. All rights reserved.
-</p>
-
-
-<div>
-<a href="#">Instagram</a>
-  •  
-<a href="#">Facebook</a>
-</div>
-
+    <p>🦋 Boo & Bloom 🌸</p>
+    <p>© 2026 Boo & Bloom. All rights reserved.</p>
+    <p>Roxby Downs, South Australia</p>
 </footer>
-
-
-<script>
-
-document
-.getElementById("enquiry-form")
-.addEventListener("submit", function(event) {
-
-event.preventDefault();
-
-document
-.getElementById("form-message")
-.textContent =
-"Thank you! Your enquiry has been received.";
-
-this.reset();
-
-});
-
-</script>
 
 </body>
 </html>
