@@ -685,7 +685,11 @@
       <option value="Cash">Cash</option>
       <option value="Other">Other</option>
     </select>
+<div id="totalBox">
+  <strong>Total Due: </strong><span id="invoiceTotal">$0.00</span>
+</div>
 
+<input type="hidden" id="totalDue" name="Total Due" value="$0.00">
     <label>Invoice Number</label>
     <input type="text" name="Invoice Number" placeholder="001" required>
 
@@ -747,7 +751,8 @@ function calculateInvoice() {
   const hourlyRate = baseRate + (extraChildren * 3);
   const total = hours * hourlyRate;
 
-  alert("Boo & Bloom Invoice Total: $" + total.toFixed(2));
+  document.getElementById("invoiceTotal").textContent = "$" + total.toFixed(2);
+document.getElementById("totalDue").value = "$" + total.toFixed(2);
 }
 
 document.getElementById("startTime").addEventListener("change", calculateInvoice);
