@@ -741,10 +741,13 @@ function calculateInvoice() {
   if (!start || !finish || !day) return;
 
   const startTime = new Date("2000-01-01T" + start);
-  const finishTime = new Date("2000-01-01T" + finish);
-  const hours = (finishTime - startTime) / 3600000;
+  const finishTime = new Date("2000-01-01T" + finish
+let hours = (finishTime - startTime) / 3600000;
 
-  if (hours <= 0) return;
+if (hours <= 0) {
+  hours += 24;
+}
+
 
   const baseRate = day === "Weekday" ? 20 : 22;
   const extraChildren = Math.max(children - 1, 0);
