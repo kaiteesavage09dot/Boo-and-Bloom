@@ -751,7 +751,7 @@ function calculateInvoice() {
   const hourlyRate = baseRate + (extraChildren * 3);
   const total = hours * hourlyRate;
 
-  document.getElementById("invoiceTotal").textContent = "$" + total.toFixed(2);
+document.getElementById("invoiceTotal").textContent = "$" + total.toFixed(2);
 document.getElementById("totalDue").value = "$" + total.toFixed(2);
 }
 
