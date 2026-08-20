@@ -727,5 +727,33 @@
   font-size:16px;
 }
 </style>
+  <script>
+function calculateInvoice() {
+  const start = document.getElementById("startTime").value;
+  const finish = document.getElementById("finishTime").value;
+  const children = parseInt(document.getElementById("children").value) || 1;
+  const day = document.getElementById("dayType").value;
+
+  if (!start || !finish || !day) return;
+
+  const startTime = new Date("2000-01-01T" + start);
+  const finishTime = new Date("2000-01-01T" + finish);
+  const hours = (finishTime - startTime) / 3600000;
+
+  if (hours <= 0) return;
+
+  const baseRate = day === "weekday" ? 20 : 22;
+  const extraChildren = Math.max(children - 1, 0);
+  const hourlyRate = baseRate + (extraChildren * 3);
+  const total = hours * hourlyRate;
+
+  alert("Boo & Bloom Invoice Total: $" + total.toFixed(2));
+}
+
+document.getElementById("startTime").addEventListener("change", calculateInvoice);
+document.getElementById("finishTime").addEventListener("change", calculateInvoice);
+document.getElementById("children").addEventListener("input", calculateInvoice);
+document.getElementById("dayType").addEventListener("change", calculateInvoice);
+  </script>
 </body>
 </html>
