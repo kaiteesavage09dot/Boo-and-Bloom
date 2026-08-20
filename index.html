@@ -647,6 +647,85 @@
     </div>
 
   </footer>
+<!-- BOO & BLOOM INVOICE FORM -->
+<section id="invoice" style="padding:40px 20px; max-width:700px; margin:auto;">
+  <h2>🧾 Boo & Bloom Invoice</h2>
+  <p>Complete the details below to send an invoice to Boo & Bloom.</p>
 
+  <form action="https://formspree.io/f/xjybjprp" method="POST">
+
+    <label>Parent/Guardian Name</label>
+    <input type="text" name="Parent/Guardian" required>
+
+    <label>Child/Children's Name(s)</label>
+    <input type="text" name="Children" required>
+
+    <label>Booking Date</label>
+    <input type="date" name="Booking Date" required>
+
+    <label>Start Time</label>
+    <input type="time" name="Start Time" required>
+
+    <label>Finish Time</label>
+    <input type="time" name="Finish Time" required>
+
+    <label>Number of Children</label>
+    <input type="number" name="Number of Children" min="1" value="1" required>
+
+    <label>Day</label>
+    <select name="Day Type" required>
+      <option value="">Select</option>
+      <option value="Weekday">Weekday — $20/hour</option>
+      <option value="Weekend">Weekend — $22/hour</option>
+    </select>
+
+    <label>Payment Method</label>
+    <select name="Payment Method">
+      <option value="Bank Transfer">Bank Transfer</option>
+      <option value="Cash">Cash</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label>Invoice Number</label>
+    <input type="text" name="Invoice Number" placeholder="001" required>
+
+    <label>Additional Notes</label>
+    <textarea name="Notes" rows="4"></textarea>
+
+    <input type="hidden" name="_subject" value="New Boo & Bloom Invoice">
+
+    <button type="submit">🦋 Send Invoice</button>
+
+  </form>
+</section>
+
+<style>
+#invoice label {
+  display:block;
+  margin-top:15px;
+  margin-bottom:5px;
+  font-weight:bold;
+}
+
+#invoice input,
+#invoice select,
+#invoice textarea {
+  width:100%;
+  padding:10px;
+  box-sizing:border-box;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+#invoice button {
+  margin-top:20px;
+  padding:12px 25px;
+  border:0;
+  border-radius:25px;
+  cursor:pointer;
+  font-size:16px;
+}
+</style>
 </body>
 </html>
