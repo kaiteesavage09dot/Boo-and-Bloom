@@ -664,16 +664,16 @@
     <input type="date" name="Booking Date" required>
 
     <label>Start Time</label>
-    <input type="time" name="Start Time" required>
+    <input type="time" id="startTime" name="Start Time" required>
 
     <label>Finish Time</label>
-    <input type="time" name="Finish Time" required>
+    <input type="time" id="finishTime" name="Finish Time" required>
 
     <label>Number of Children</label>
-    <input type="number" name="Number of Children" min="1" value="1" required>
+    <input type="number" id="children" name="Number of Children" min="1" value="1" required>
 
     <label>Day</label>
-    <select name="Day Type" required>
+    <select id="dayType" name="Day Type" required>
       <option value="">Select</option>
       <option value="Weekday">Weekday — $20/hour</option>
       <option value="Weekend">Weekend — $22/hour</option>
@@ -742,7 +742,7 @@ function calculateInvoice() {
 
   if (hours <= 0) return;
 
-  const baseRate = day === "weekday" ? 20 : 22;
+  const baseRate = day === "Weekday" ? 20 : 22;
   const extraChildren = Math.max(children - 1, 0);
   const hourlyRate = baseRate + (extraChildren * 3);
   const total = hours * hourlyRate;
